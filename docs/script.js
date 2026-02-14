@@ -15,8 +15,18 @@ const table = {
 }
 
 const updateTheme = () => {
-  const theme = themeForm.querySelector('input[name="theme"]:checked').value
+  if (!themeForm || !stylesheet) {
+    console.error('Required elements not found')
+    return
+  }
 
+  const checkedInput = themeForm.querySelector('input[name="theme"]:checked')
+  if (!checkedInput) {
+    console.error('No theme selected')
+    return
+  }
+
+  const theme = checkedInput.value
   const fileName = `${theme === 'auto' ? 'noir' : theme}.min.css`
   const localUrl = `${localBase}${fileName}`
 
@@ -26,39 +36,63 @@ const updateTheme = () => {
     snippet.hidden = snippet.id.indexOf(theme) === -1
   }
 
-  table.fileName.innerText = fileName
+  if (table.fileName) {
+    table.fileName.innerText = fileName
+  }
 
-  if (theme === 'auto') {
-    table.theme.innerHTML = `
+  if (table.theme) {
+    if (theme === 'auto') {
+      table.theme.innerHTML = `
     Respects user-defined theme settings using <a style="--links: var(--code)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme" target="_blank" rel="noopener"><code>prefers-color-scheme</code></a>.<br>
     Light in browsers where the theme settings can't be detected.
     `
-  } else {
-    table.theme.innerText = `Theme is forced to ${theme}.`
+    } else {
+      table.theme.innerText = `Theme is forced to ${theme}.`
+    }
   }
 }
 
-themeForm.addEventListener('change', updateTheme)
+if (themeForm) {
+  themeForm.addEventListener('change', updateTheme)
+}
 
 updateTheme()
 startupStylesheet.parentElement.removeChild(startupStylesheet)
 
-copyButton.addEventListener('click', () => {
-  const clipboard = navigator.clipboard || window.clipboard
-  const theme = themeForm.querySelector('input[name="theme"]:checked').value
-  const snippetText = document.querySelector(`#link-snippet-${theme} code`).textContent
+if (copyButton) {
+  copyButton.addEventListener('click', () => {
+    const clipboard = navigator.clipboard || window.clipboard
+    const checkedInput = themeForm.querySelector('input[name="theme"]:checked')
+    if (!checkedInput) return
 
-  clipboard.writeText(snippetText)
-    .then(() => { copyButtonFeedback.textContent = '\u2714' })
-    .catch(() => { copyButtonFeedback.textContent = '\u274C' })
-    .then(() => setTimeout(() => { copyButtonFeedback.textContent = '' }, 1000))
-})
+    const theme = checkedInput.value
+    const snippetElement = document.querySelector(`#link-snippet-${theme} code`)
+    if (!snippetElement) return
 
-document.getElementById('dialog-trigger').addEventListener('click', () => {
-  document.getElementById('dialog-result').innerText = ''
-  document.getElementById('dialog').showModal()
-})
+    const snippetText = snippetElement.textContent
 
-document.getElementById('dialog').addEventListener('close', (event) => {
-  document.getElementById('dialog-result').innerText = `Your answer: ${event.target.returnValue}`
-})
+    clipboard.writeText(snippetText)
+      .then(() => { copyButtonFeedback.textContent = '\u2714' })
+      .catch(() => { copyButtonFeedback.textContent = '\u274C' })
+      .then(() => setTimeout(() => { copyButtonFeedback.textContent = '' }, 1000))
+  })
+}
+
+const dialogTrigger = document.getElementById('dialog-trigger')
+const dialog = document.getElementById('dialog')
+const dialogResult = document.getElementById('dialog-result')
+
+if (dialogTrigger && dialog) {
+  dialogTrigger.addEventListener('click', () => {
+    if (dialogResult) {
+      dialogResult.innerText = ''
+    }
+    dialog.showModal()
+  })
+
+  dialog.addEventListener('close', (event) => {
+    if (dialogResult) {
+      dialogResult.innerText = `Your answer: ${event.target.returnValue}`
+    }
+  })
+}
