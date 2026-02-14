@@ -3,7 +3,7 @@ const chalk = require('chalk')
 const puppeteer = require('puppeteer')
 
 const check = async (browser, theme) => {
-  console.log(chalk`{bold Checking {blue ${theme}} theme...}`)
+  console.log(chalk`{bold Checking {grey ${theme}} theme...}`)
 
   const page = await browser.newPage()
   page.emulateMediaFeatures([
