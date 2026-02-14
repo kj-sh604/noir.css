@@ -87,5 +87,5 @@ typings/
 .idea/
 
 # Output of yarn build
-out/
+# out/ # let's try to CDN this shit
 dist/
