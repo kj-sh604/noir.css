@@ -1,115 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head prefix="og: http://ogp.me/ns#">
+  <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Water.css</title>
-    <link rel="canonical" href="https://watercss.kognise.dev/" />
+    <title>noir.css</title>
     <meta
       name="description"
-      content="A drop-in collection of CSS styles to make simple websites like this just a little bit nicer."
+      content="A drop-in collection of monochrome CSS styles to make simple websites look clean and elegant."
     />
 
-    <link rel="apple-touch-icon" sizes="180x180" href="./icons/apple-touch-icon.png" />
-    <link rel="icon" id="icon-16" type="image/png" sizes="16x16" href="./icons/favicon-16x16.png" />
-    <link rel="icon" id="icon-32" type="image/png" sizes="32x32" href="./icons/favicon-32x32.png" />
-    <link rel="manifest" href="./site.webmanifest" />
-    <link rel="mask-icon" href="./icons/safari-pinned-tab.svg" color="#5bbad5" />
-    <link rel="shortcut icon" id="icon-ico" href="./icons/favicon.ico" />
-    <meta name="apple-mobile-web-app-title" content="Water.css" />
-    <meta name="application-name" content="Water.css" />
-    <meta name="msapplication-TileColor" content="#00aba9" />
-    <meta name="msapplication-config" content="./icons/browserconfig.xml" />
-    <meta name="theme-color" content="#ffffff" />
+    <!-- Startup styles of noir.css -->
+    <link rel="preload" as="style" href="./noir.css/dark.min.css" />
+    <link rel="preload" as="style" href="./noir.css/light.min.css" />
+    <link rel="stylesheet" id="js-startup-stylesheet" href="./noir.css/noir.min.css" />
 
-    <!-- Startup styles of water.css, so styles don't have to wait until JS is loaded -->
-    <link rel="preload" as="style" href="./water.css/dark.min.css" />
-    <link rel="preload" as="style" href="./water.css/light.min.css" />
-    <link rel="stylesheet" id="js-startup-stylesheet" href="./water.css/water.min.css" />
-
-    <!-- Dynamic version of water.css, overwrites startup styles. JavaScript sets & updates href -->
+    <!-- Dynamic version of noir.css, overwrites startup styles. JavaScript sets & updates href -->
     <link rel="stylesheet" id="js-stylesheet" />
 
-    <!-- Custom styles for the documentation / version picker -->
+    <!-- Custom styles for the documentation -->
     <link rel="stylesheet" href="style.css" />
-
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://watercss.kognise.dev/" />
-    <meta property="og:title" content="Water.css" />
-    <meta
-      property="og:description"
-      content="A drop-in collection of CSS styles to make simple websites like this just a little bit nicer."
-    />
-    <meta
-      property="og:image"
-      content="https://raw.githubusercontent.com/kognise/water.css/master/assets/logo.png"
-    />
-    <meta property="og:image:width" content="1154" />
-    <meta property="og:image:height" content="444" />
-    <script type="application/ld+json">
-      {
-        "@context": "http://www.schema.org",
-        "@type": "WebSite",
-        "name": "Water.css",
-        "alternateName": "Water.css",
-        "url": "https://watercss.kognise.dev/"
-      }
-    </script>
-
-    <script>
-      // eslint-disable-next-line no-useless-escape
-      window.navigator.clipboard || document.write('<script src="https://unpkg.com/clipboard-polyfill@2.8.6/dist/clipboard-polyfill.promise.js"><\/script>')
-    </script>
-
-    <!-- Use bright favicons when the browser is in dark mode. -->
-    <script type="module">
-      import faviconSwitcher from 'https://unpkg.com/favicon-mode-switcher@1.0.4/dist/index.min.mjs'
-      faviconSwitcher([
-        { element: '#icon-ico', href: { dark: './icons/light-favicon.ico' } },
-        { element: '#icon-16', href: { dark: './icons/light-favicon-16x16.png' } },
-        { element: '#icon-32', href: { dark: './icons/light-favicon-32x32.png' } }
-      ])
-    </script>
   </head>
 
   <body>
-    <h1>Water.css</h1>
+    <h1>noir.css</h1>
 
     <p>
-      Water.css is a drop-in collection of CSS styles to make simple websites like this just a
-      little bit nicer.
+      noir.css is a drop-in collection of monochrome CSS styles to make simple websites like this
+      look clean and elegant.
     </p>
     <p>
-      Now you can write your simple static site with nice semantic html, and Water.css will manage
-      the styling for you.
+      forked from the great <a href="https://github.com/kognise/water.css">water.css</a> &mdash; redesigned with a refined black, grey, and white palette.
+    </p>
+    <p>
+      write your simple static site with semantic HTML &mdash; noir.css handles the styling. <br>
+      no classes needed.
     </p>
 
     <div class="row">
       <div>
-        <a href="#installation"><b>Get it already!</b></a>
+        <a href="#installation"><b>Get started</b></a>
         <br />
-        <a href="https://github.com/kognise/water.css"><b>GitHub</b></a>
+        <a href="https://github.com/kj-sh604/noir.css"><b>GitHub</b></a>
       </div>
-
-      <a
-        href="https://www.producthunt.com/posts/water-css?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-water-css"
-        target="_blank"
-        rel="noopener"
-      >
-        <img
-          id="product-hunt"
-          src="https://api.producthunt.com/widgets/embed-image/v1/top-post-badge.svg?post_id=150490&theme=dark&period=daily"
-          alt="Water.css - Make your tiny website just a little nicer | Product Hunt Embed"
-          style="width: 250px; height: 54px;"
-          width="250px"
-          height="54px"
-        />
-      </a>
     </div>
 
-    <h2>Installation</h2>
-    <div id="installation">
+    <h2 id="installation">Installation</h2>
+    <div>
       <header class="row">
         <h3 id="link-snippet-headline">
           Paste this into the <code>&lt;head&gt;</code> of your HTML:
@@ -121,21 +57,21 @@
       </header>
 
       <div id="link-snippet-container">
-        <pre id="link-snippet-auto"><code>&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css"></code></pre>
-        <pre hidden id="link-snippet-dark"><code>&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/dark.css"></code></pre>
-        <pre hidden id="link-snippet-light"><code>&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/light.css"></code></pre>
+        <pre id="link-snippet-auto"><code>&lt;link rel="stylesheet" href=""&gt;</code></pre>
+        <pre hidden id="link-snippet-dark"><code>&lt;link rel="stylesheet" href=""&gt;</code></pre>
+        <pre hidden id="link-snippet-light"><code>&lt;link rel="stylesheet" href=""&gt;</code></pre>
       </div>
 
       <h3>Options</h3>
       <form id="theme-form">
         <input type="radio" value="auto" checked name="theme" id="theme-auto" />
-        <label for="theme-auto">Automatic 🌙 / ☀</label>
+        <label for="theme-auto">Automatic</label>
 
         <input type="radio" value="dark" name="theme" id="theme-dark" />
-        <label for="theme-dark">Dark theme 🌙</label>
+        <label for="theme-dark">Dark</label>
 
         <input type="radio" value="light" name="theme" id="theme-light" />
-        <label for="theme-light">Light theme ☀</label>
+        <label for="theme-light">Light</label>
       </form>
 
       <table id="version-info">
@@ -150,11 +86,6 @@
           </tr>
 
           <tr>
-            <th scope="row">Size (min + gzip)</th>
-            <td id="table-file-size"></td>
-          </tr>
-
-          <tr>
             <th scope="row">Theme</th>
             <td id="table-theme"></td>
           </tr>
@@ -165,34 +96,12 @@
     <h2 id="goals">Goals</h2>
     <ul>
       <li>Responsive</li>
-      <li>Good code quality</li>
-      <li>Good browser support</li>
-      <li>Small size (&lt; 2kb)</li>
+      <li>Monochrome &mdash; blacks, greys, whites</li>
+      <li>Accessible</li>
+      <li>Small size</li>
       <li>Beautiful</li>
       <li>No classes</li>
     </ul>
-
-    <h2 id="responsive">Is it responsive?</h2>
-    <p>
-      <strong>Heck yeah!</strong> It doesn't include any fancy styles so it's easily mobile
-      responsive. Just add the famous
-      <a href="https://www.w3schools.com/css/css_rwd_viewport.asp">responsive viewport tag</a> and
-      you'll be good to go!
-    </p>
-    <p>In fact, try resizing this page. Everything flows super nicely as you'll see.</p>
-
-    <h2 id="bookmarklet">Bookmarklet</h2>
-    <p>
-      A bookmarklet is a snippet of JavaScript that sits in your bookmarks bar.
-    </p>
-    <p>
-      The Waterize bookmarklet can be used to make ugly websites more readable by replacing the styles with Water.css. Just drag this link to your bookmarks bar:
-    </p>
-    <strong>
-      <a href="javascript:(function()%7B%2F%2F%20Water.css%20Bookmarklet%0A%2F%2F%20---------------------%0A%0Aconst%20%24%24%20%3D%20(selector)%20%3D%3E%20document.querySelectorAll(selector)%0Aconst%20createElement%20%3D%20(tagName%2C%20properties)%20%3D%3E%20Object.assign(document.createElement(tagName)%2C%20properties)%0A%0A%2F%2F%20Remove%20all%20CSS%20stylesheets%2C%20external%20and%20internal%0A%24%24('link%5Brel%3D%22stylesheet%22%5D%2Cstyle').forEach((el)%20%3D%3E%20el.remove())%0A%0A%2F%2F%20Remove%20all%20inline%20styles%0A%24%24('*').forEach((el)%20%3D%3E%20(el.style%20%3D%20''))%0A%0Aconst%20linkElm%20%3D%20createElement('link'%2C%20%7B%0A%20%20rel%3A%20'stylesheet'%2C%0A%20%20href%3A%20'https%3A%2F%2Fcdn.jsdelivr.net%2Fnpm%2Fwater.css%402%2Fout%2Flight.css'%0A%7D)%0A%0A%2F%2F%20Add%20water.css%20and%20responsive%20viewport%20(if%20necessary)%0Adocument.head.append(%0A%20%20linkElm%2C%0A%20%20!%24%24('meta%5Bname%3D%22viewport%22%5D').length%20%26%26%20createElement('meta'%2C%20%7B%0A%20%20%20%20name%3A%20'viewport'%2C%0A%20%20%20%20content%3A%20'width%3Ddevice-width%2Cinitial-scale%3D1.0'%0A%20%20%7D)%0A)%0A%0A%2F%2F%20Theme%20switching%20icons%0Aconst%20moonSVG%20%3D%20'%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22currentColor%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20class%3D%22feather%20feather-moon%22%3E%3Cpath%20d%3D%22M21%2012.79A9%209%200%201%201%2011.21%203%207%207%200%200%200%2021%2012.79z%22%3E%3C%2Fpath%3E%3C%2Fsvg%3E'%0Aconst%20sunSVG%20%3D%20'%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22currentColor%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20class%3D%22feather%20feather-sun%22%3E%3Ccircle%20cx%3D%2212%22%20cy%3D%2212%22%20r%3D%225%22%3E%3C%2Fcircle%3E%3Cline%20x1%3D%2212%22%20y1%3D%221%22%20x2%3D%2212%22%20y2%3D%223%22%3E%3C%2Fline%3E%3Cline%20x1%3D%2212%22%20y1%3D%2221%22%20x2%3D%2212%22%20y2%3D%2223%22%3E%3C%2Fline%3E%3Cline%20x1%3D%224.22%22%20y1%3D%224.22%22%20x2%3D%225.64%22%20y2%3D%225.64%22%3E%3C%2Fline%3E%3Cline%20x1%3D%2218.36%22%20y1%3D%2218.36%22%20x2%3D%2219.78%22%20y2%3D%2219.78%22%3E%3C%2Fline%3E%3Cline%20x1%3D%221%22%20y1%3D%2212%22%20x2%3D%223%22%20y2%3D%2212%22%3E%3C%2Fline%3E%3Cline%20x1%3D%2221%22%20y1%3D%2212%22%20x2%3D%2223%22%20y2%3D%2212%22%3E%3C%2Fline%3E%3Cline%20x1%3D%224.22%22%20y1%3D%2219.78%22%20x2%3D%225.64%22%20y2%3D%2218.36%22%3E%3C%2Fline%3E%3Cline%20x1%3D%2218.36%22%20y1%3D%225.64%22%20x2%3D%2219.78%22%20y2%3D%224.22%22%3E%3C%2Fline%3E%3C%2Fsvg%3E'%0A%0A%2F%2F%20Theme%20toggling%20logic%0Aconst%20toggleBtn%20%3D%20createElement('button'%2C%20%7B%0A%20%20innerHTML%3A%20sunSVG%2C%0A%20%20ariaLabel%3A%20'Switch%20theme'%2C%0A%20%20style%3A%20%60%0A%20%20%20%20position%3A%20fixed%3B%0A%20%20%20%20top%3A%2050px%3B%0A%20%20%20%20right%3A%2050px%3B%0A%20%20%20%20margin%3A%200%3B%0A%20%20%20%20padding%3A%2010px%3B%0A%20%20%20%20line-height%3A%201%3B%0A%20%20%60%0A%7D)%0A%0Alet%20theme%20%3D%20'light'%0Aconst%20toggleTheme%20%3D%20()%20%3D%3E%20%7B%0A%20%20if%20(theme%20%3D%3D%3D%20'light')%20%7B%0A%20%20%20%20theme%20%3D%20'dark'%0A%20%20%20%20toggleBtn.innerHTML%20%3D%20moonSVG%0A%20%20%20%20linkElm.href%20%3D%20'https%3A%2F%2Fcdn.jsdelivr.net%2Fnpm%2Fwater.css%402%2Fout%2Fdark.css'%0A%20%20%7D%20else%20%7B%0A%20%20%20%20theme%20%3D%20'light'%0A%20%20%20%20linkElm.href%20%3D%20'https%3A%2F%2Fcdn.jsdelivr.net%2Fnpm%2Fwater.css%402%2Fout%2Flight.css'%0A%20%20%20%20toggleBtn.innerHTML%20%3D%20sunSVG%0A%20%20%7D%0A%7D%0A%0AtoggleBtn.addEventListener('click'%2C%20toggleTheme)%0Adocument.body.append(toggleBtn)%7D)()%3B">
-        Waterize
-      </a>
-    </strong>
 
     <h2 id="demo">Element demos</h2>
     <p>This is supposed to be a demo page so we need more elements!</p>
@@ -356,7 +265,7 @@
     <h6>Heading 6</h6>
 
     <footer>
-      <a href="#">Back to top ⬆</a>
+      <a href="#">Back to top</a>
     </footer>
     <script src="script.js" defer></script>
   </body>
