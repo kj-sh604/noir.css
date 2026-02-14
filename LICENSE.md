@@ -1,6 +1,7 @@
 # The MIT License (MIT)
 
-Copyright © 2019 Kognise
+Copyright © 2019 Kognise (water.css)
+Copyright © 2026 kj-sh604 (noir.css)
 
 Permission is hereby granted, free of charge, to any person
 obtaining a copy of this software and associated documentation
