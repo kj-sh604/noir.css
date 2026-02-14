@@ -9,10 +9,6 @@ const chalk = require('chalk')
 const rename = require('gulp-rename')
 const filter = require('gulp-filter')
 const flatten = require('gulp-flatten')
-const babel = require('gulp-babel')
-const terser = require('gulp-terser')
-const posthtml = require('gulp-posthtml')
-const htmlnano = require('htmlnano')
 const sizereport = require('gulp-sizereport')
 const postcssCssVariables = require('postcss-css-variables')
 const postcssImport = require('postcss-import')
@@ -79,7 +75,7 @@ const style = () => {
       // </minifying>
 
       .pipe(gulp.dest(paths.styles.dest))
-      .pipe(gulp.dest(paths.docs.dest + '/water.css'))
+      .pipe(gulp.dest(paths.docs.dest + '/noir.css'))
 
       .pipe(sizereport({ gzip: true, total: false, title: 'SIZE REPORT' }))
       .pipe(browserSync.stream())
@@ -87,27 +83,11 @@ const style = () => {
 }
 
 const docs = () => {
-  const htmlOnly = filter('**/*.html', { restore: true })
-  const jsOnly = filter('**/*.js', { restore: true })
   const cssOnly = filter('**/*.css', { restore: true })
 
   return (
     gulp
-      // Exclude all HTML files but index.html
-      .src(paths.docs.src, { ignore: '**/!(index).html' })
-
-      // * Process HTML *
-      .pipe(htmlOnly)
-      .pipe(posthtml([htmlnano()]))
-      .pipe(htmlOnly.restore)
-
-      // * Process JS *
-      .pipe(jsOnly)
-      .pipe(sourcemaps.init())
-      .pipe(babel({ presets: ['@babel/preset-env'] }))
-      .pipe(terser({ toplevel: true }))
-      .pipe(sourcemaps.write('.'))
-      .pipe(jsOnly.restore)
+      .src(paths.docs.src)
 
       // * Process CSS *
       .pipe(cssOnly)
