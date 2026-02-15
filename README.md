@@ -24,19 +24,19 @@ Stick this in your `<head>`:
 ### automatic theme (respects system preference):
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/kj-sh604/noir.css/out/noir.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/kj-sh604/noir.css@latest/out/noir.min.css">
 ```
 
 ### dark theme:
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/kj-sh604/noir.css/out/dark.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/kj-sh604/noir.css@latest/out/dark.min.css">
 ```
 
 ### light theme:
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/kj-sh604/noir.css/out/light.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/kj-sh604/noir.css@latest/out/light.min.css">
 ```
 
 Unminified versions are also available — just remove `.min` from the filename.
@@ -73,7 +73,7 @@ noir.css is built with CSS custom properties, so overriding the palette is trivi
 Example — override link color:
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/kj-sh604/noir.css/out/noir.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/kj-sh604/noir.css@latest/out/noir.min.css">
 <style>
   :root {
     --links: #a0a6b2;
