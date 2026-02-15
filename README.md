@@ -1,5 +1,9 @@
 # noir.css
 
+<img width="2562" height="800" alt="combined" src="https://github.com/user-attachments/assets/e9ba9482-dc60-49a7-b7b7-ced5627d2e35" />
+
+&nbsp;
+
 A drop-in collection of monochrome CSS styles to make simple websites look clean and elegant.
 
 Forked from [water.css](https://github.com/kognise/water.css) — redesigned with a refined black, grey, and white palette. No classes needed. Just include it and go.
