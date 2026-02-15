@@ -16,7 +16,7 @@
   --focus: #5a5d66ab;
   --border: #c8c8cc;
   --code: #2a2a2e;
-  --animation-duration: 0.1s;
+  --animation-duration: 0.0s;
   --button-base: #d4d4d8;
   --button-hover: #a8a8ae;
   --scrollbar-thumb: rgb(184, 184, 189);
@@ -41,7 +41,7 @@
   --focus: #a0a6b2ab;
   --border: #3a3d44;
   --code: #cbced5;
-  --animation-duration: 0.1s;
+  --animation-duration: 0.0s;
   --button-base: #111114;
   --button-hover: #0a0a0d;
   --scrollbar-thumb: var(--button-hover);
@@ -140,11 +140,11 @@ body {
 
 button {
   transition:
-    background-color 0.1s linear,
-    border-color 0.1s linear,
-    color 0.1s linear,
-    box-shadow 0.1s linear,
-    transform 0.1s ease;
+    background-color 0.0s linear,
+    border-color 0.0s linear,
+    color 0.0s linear,
+    box-shadow 0.0s linear,
+    transform 0.0s ease;
   transition:
     background-color var(--animation-duration) linear,
     border-color var(--animation-duration) linear,
@@ -157,11 +157,11 @@ button {
 
   button {
   transition:
-    background-color 0.1s linear,
-    border-color 0.1s linear,
-    color 0.1s linear,
-    box-shadow 0.1s linear,
-    transform 0.1s ease;
+    background-color 0.0s linear,
+    border-color 0.0s linear,
+    color 0.0s linear,
+    box-shadow 0.0s linear,
+    transform 0.0s ease;
   transition:
     background-color var(--animation-duration) linear,
     border-color var(--animation-duration) linear,
@@ -173,11 +173,11 @@ button {
 
 input {
   transition:
-    background-color 0.1s linear,
-    border-color 0.1s linear,
-    color 0.1s linear,
-    box-shadow 0.1s linear,
-    transform 0.1s ease;
+    background-color 0.0s linear,
+    border-color 0.0s linear,
+    color 0.0s linear,
+    box-shadow 0.0s linear,
+    transform 0.0s ease;
   transition:
     background-color var(--animation-duration) linear,
     border-color var(--animation-duration) linear,
@@ -190,11 +190,11 @@ input {
 
   input {
   transition:
-    background-color 0.1s linear,
-    border-color 0.1s linear,
-    color 0.1s linear,
-    box-shadow 0.1s linear,
-    transform 0.1s ease;
+    background-color 0.0s linear,
+    border-color 0.0s linear,
+    color 0.0s linear,
+    box-shadow 0.0s linear,
+    transform 0.0s ease;
   transition:
     background-color var(--animation-duration) linear,
     border-color var(--animation-duration) linear,
@@ -206,11 +206,11 @@ input {
 
 textarea {
   transition:
-    background-color 0.1s linear,
-    border-color 0.1s linear,
-    color 0.1s linear,
-    box-shadow 0.1s linear,
-    transform 0.1s ease;
+    background-color 0.0s linear,
+    border-color 0.0s linear,
+    color 0.0s linear,
+    box-shadow 0.0s linear,
+    transform 0.0s ease;
   transition:
     background-color var(--animation-duration) linear,
     border-color var(--animation-duration) linear,
@@ -223,11 +223,11 @@ textarea {
 
   textarea {
   transition:
-    background-color 0.1s linear,
-    border-color 0.1s linear,
-    color 0.1s linear,
-    box-shadow 0.1s linear,
-    transform 0.1s ease;
+    background-color 0.0s linear,
+    border-color 0.0s linear,
+    color 0.0s linear,
+    box-shadow 0.0s linear,
+    transform 0.0s ease;
   transition:
     background-color var(--animation-duration) linear,
     border-color var(--animation-duration) linear,
