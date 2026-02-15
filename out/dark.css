@@ -10,7 +10,7 @@
   --text-main: #cbced5;
   --text-bright: #e7e8ec;
   --text-muted: #a0a6b2;
-  --links: #b2a0a6;
+  --links: #7d9bc5;
   --focus: #a0a6b2ab;
   --border: #3a3d44;
   --code: #cbced5;
@@ -585,7 +585,7 @@ input[type='range']:focus::-ms-fill-upper {
 
 a {
   text-decoration: none;
-  color: #b2a0a6;
+  color: #7d9bc5;
   color: var(--links);
 }
 
