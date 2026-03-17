@@ -1,12 +1,12 @@
 :root {
-  --background-body: #f5f5f7;
+  --background-body: #f5f5f5;
   --background: #eaeaed;
   --background-alt: #f0f0f3;
   --selection: #c8c8cc;
   --text-main: #2a2a2e;
   --text-bright: #111114;
   --text-muted: #5a5d66;
-  --links: #2560a8;
+  --links: #2d68d0;
   --focus: #5a5d66ab;
   --border: #c8c8cc;
   --code: #2a2a2e;
